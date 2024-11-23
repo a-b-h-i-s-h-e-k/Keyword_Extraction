@@ -1,0 +1,70 @@
+<!--Check the bootstrap to write basic html code-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Keyword Extraction</title>
+    <!-- Linking Bootstrap CSS for styling -->
+    <!-- Why: Bootstrap provides pre-designed classes for responsive and modern UI components -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- Adding custom CSS styles for additional design and layout adjustments -->
+    <style>
+        .container {
+            max-width: 500px;             /* Restrict the container width to 500px for better focus and alignment */
+            margin-top: 50px;             /* Adds space at the top to prevent the container from sticking to the top edge */
+            background: black;            /* Sets the background color to black for a contrasting, modern look */
+            color: white;                 /* Sets the text color to white to make it stand out against the black background */
+            padding-top: 3%;              /* Adds space at the top inside the container for a clean layout */
+            padding-bottom: 3%;           /* Adds space at the bottom for visual balance */
+            padding-left: 5%;             /* Adds space inside on the left for content padding */
+            padding-right: 5%;            /* Adds space inside on the right to match the left padding */
+            border-radius: 15px;          /* Rounds the corners of the container for a softer, modern appearance */
+        }
+    </style>
+</head>
+<body>
+    <!-- The main container that holds the forms and content -->
+    <div class="container">
+        <!-- Page heading for the keyword extraction tool -->
+        <!-- Why: Provides a clear title to let the user know what the tool does -->
+        <h2 class="text-center text-green">Keyword Extraction</h2>
+
+        <!-- Form to upload a document for keyword extraction -->
+        <!-- Why: This form allows users to upload a file (e.g., a text document or PDF) -->
+        <!-- Method: POST sends the file data securely to the server -->
+        <!-- Action: Specifies the server endpoint (/extract_keywords) that will process the file -->
+        <!-- enctype="multipart/form-data": Ensures file upload functionality -->
+        <form method="POST" action="/extract_keywords" enctype="multipart/form-data">
+            <!-- Input field to upload a document -->
+            <div class="form-group">
+                <label for="document">Upload Document:</label>
+                <!-- Why: 'file' input allows users to select a file from their device -->
+                <input type="file" name="file" class="form-control" id="document">
+            </div>
+            <!-- Submit button to send the file to the server -->
+            <!-- Why: Triggers the extraction process on the server -->
+            <button type="submit" class="btn btn-primary">Extract Keywords</button>
+        </form>
+        
+        <!-- Horizontal line to visually separate the two forms -->
+        <hr>
+
+        <!-- Form to search for specific keywords -->
+        <!-- Why: Allows users to manually input a keyword or phrase to search -->
+        <!-- Method: POST sends the search query securely to the server -->
+        <!-- Action: Specifies the server endpoint (/search_keywords) that will handle the search -->
+        <form method="POST" action="/search_keywords">
+            <!-- Input field for entering a search term -->
+            <div class="form-group">
+                <label for="search">Search Keywords:</label>
+                <!-- Why: 'text' input lets users type in a search query -->
+                <input type="text" name="search" class="form-control" id="search">
+            </div>
+            <!-- Submit button to send the search query to the server -->
+            <!-- Why: Initiates the search process on the server -->
+            <button type="submit" class="btn btn-primary">Search</button>
+        </form>
+    </div>
+</body>
+</html>

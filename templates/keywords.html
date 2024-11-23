@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Keyword Extraction Results</title>
+    <!-- Linking Bootstrap CSS for styling -->
+    <!-- Why: Bootstrap provides pre-designed classes for tables and layout, enabling quick and responsive design -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- Adding custom CSS styles for layout adjustments -->
+    <style>
+        .container {
+            max-width: 500px;             /* Restrict the container width to 500px for a focused layout */
+            margin-top: 50px;             /* Adds space at the top to prevent the container from sticking to the top edge */
+        }
+    </style>
+</head>
+<body>
+    <!-- Main container for displaying the keyword extraction results -->
+    <div class="container">
+        <!-- Heading for the results page -->
+        <!-- Why: Provides a clear title for the page content -->
+        <h2>Keyword Extraction Results</h2>
+
+        <!-- Table to display extracted keywords and their scores -->
+        <!-- Why: A table is ideal for presenting structured data with columns for keywords and their scores -->
+        <table class="table table-dark table-hover">
+            <!-- Table head -->
+            <thead>
+                <tr>
+                    <!-- Column for the keyword -->
+                    <th>Keyword</th>
+                    <!-- Column for the corresponding score -->
+                    <th>Score</th>
+                </tr>
+            </thead>
+            <!-- Table body -->
+            <tbody>
+                <!-- Loop through the keywords and scores using a templating language (e.g., Jinja2 in Python Flask) -->
+                {% for keyword, score in keywords.items() %}
+                <tr>
+                    <!-- Display the keyword -->
+                    <td>{{ keyword }}</td>
+                    <!-- Display the corresponding score -->
+                    <td>{{ score }}</td>
+                </tr>
+                {% endfor %}
+                <!-- End of the loop -->
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

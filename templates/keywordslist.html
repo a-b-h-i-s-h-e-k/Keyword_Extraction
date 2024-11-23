@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Keyword Extraction Results</title>
+    <!-- Linking Bootstrap CSS for styling -->
+    <!-- Why: Bootstrap provides pre-designed styles for layout and responsive design -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- Adding custom CSS styles for additional design -->
+    <style>
+        .container {
+            max-width: 500px;             /* Restrict the container width to 500px for focused layout */
+            margin-top: 50px;             /* Adds space above the container for better alignment */
+            background: black;            /* Sets the background color to black for modern appearance */
+            color: white;                 /* Sets text color to white for contrast */
+            padding-top: 3%;              /* Adds padding at the top of the container */
+            padding-bottom: 3%;           /* Adds padding at the bottom */
+            padding-left: 5%;             /* Adds padding on the left */
+            padding-right: 5%;            /* Adds padding on the right */
+            border-radius: 15px;          /* Rounds the corners for a softer look */
+        }
+
+        .keyword-list {
+            margin-top: 20px;             /* Adds space above the list of keywords */
+        }
+
+        .keyword-item {
+            margin-bottom: 10px;          /* Adds space between individual keyword items */
+        }
+    </style>
+</head>
+<body>
+    <!-- Main container for displaying the results -->
+    <div class="container">
+        <!-- Page heading for the keyword extraction results -->
+        <h2 class="text-center text-green">Keyword Extraction Results</h2>
+
+        <!-- Div to hold the list of extracted keywords -->
+        <div class="keyword-list">
+            <!-- Loop through the list of keywords using a templating language (e.g., Jinja2 in Flask) -->
+            {% for keyword in keywords %}
+            <div class="keyword-item">
+                <!-- Display each keyword inside a styled paragraph -->
+                <p class="bg-primary text-white">{{ keyword }}</p>
+                <!-- Why: 'bg-primary' adds a blue background, and 'text-white' ensures the keyword is readable -->
+            </div>
+            {% endfor %}
+            <!-- End of the loop -->
+        </div>
+    </div>
+</body>
+</html>
